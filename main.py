@@ -5,7 +5,7 @@ import numpy as np
 from base import WindowBase
 
 
-class X5SkinDebugging(WindowBase):
+class X5Debugging(WindowBase):
     title = "X5"
 
     def __init__(self, **kwargs):
@@ -15,4 +15,4 @@ class X5SkinDebugging(WindowBase):
         pass
 
 if __name__ == '__main__':
-    X5SkinDebugging.run()
+    X5Debugging.run()
