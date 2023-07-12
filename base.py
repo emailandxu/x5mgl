@@ -27,9 +27,14 @@ class WindowBase(mglw.WindowConfig):
         self.myrender(time, frame_time)
         imgui.render()
         self.imgui.render(imgui.get_draw_data())
-    
+
     def myrender(self, time, frame_time):
         raise NotImplementedError
+
+    def resource(self, name):
+        thepath = os.path.join(self.resource_dir, name)
+        assert os.path.exists(thepath)
+        return thepath
 
     def key_event(self, key, action, modifiers):
         self.imgui.key_event(key, action, modifiers)

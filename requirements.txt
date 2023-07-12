@@ -2,3 +2,5 @@ moderngl==5.8.2
 moderngl-window==2.4.4
 imgui==2.0.0
 numpy==1.23.5
+pymeshlab
+scipy
