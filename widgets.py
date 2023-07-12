@@ -47,15 +47,15 @@ def camera_widget(aspect, fov=45.0, near=0.1, far=100.0, campos=(0, 0, 3)):
     
     def move_camera():
         with imgui.begin("camera"):
-            campos = np.array(pos_widget())
+            x, y, z = np.array(pos_widget())
             lookat = np.array(lookat_widget())
         proj = Matrix44.perspective_projection(fov, aspect, near, far)
         view = Matrix44.look_at(
-            -campos,
+            (-x, y, -z),
             lookat,
             (0.0, 1.0, 0.0),
         )
-        light_pos = -campos
+        light_pos = np.array([-x, y, -z])
         return proj, view, light_pos
 
     return move_camera
